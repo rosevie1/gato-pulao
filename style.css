@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.game-board {
+  width: 100%;
+  height: 500px;
+  border-bottom: 30px solid rgb(100, 181, 68);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(rgb(35, 124, 227), rgb(191, 223, 239));
+  /*background-image: url("image/bg.gif");
+  background-size: 100%;
+  background-repeat: no-repeat;*/
+}
+
+.box {
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  /*left: 170px;*/
+  animation: pipe-animation 1.3s infinite linear;
+}
+
+.gato {
+  width: 150px;
+  position: absolute;
+  left: 40px;
+  bottom: 0;
+}
+
+.jump {
+  animation: jump 1500ms ease-out;
+}
+
+.clouds {
+  position: absolute;
+  width: 500px;
+  animation: clouds-animation 20s infinite linear;
+}
+
+@keyframes pipe-animation {
+  from {
+    right: -80px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+
+  30% {
+    bottom: 280px;
+  }
+
+  50% {
+    bottom: 280px;
+  }
+
+  70% {
+    bottom: 280px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes clouds-animation {
+  from {
+    right: -540px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+/* Mensagem de vitória*/
+.loss-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  flex-direction: column;
+}
+
+.loss-message-button {
+  font-size: 2.5rem;
+  background-color: rgba(255, 64, 112, 1);
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  margin-top: 16px;
+  color: antiquewhite;
+}
+
+.loss-message-button:hover {
+  color: rgba(255, 64, 112, 1);
+  background-color: antiquewhite;
+}
+
+.loss-message-text {
+  color: antiquewhite;
+  font-size: 5rem;
+}
+
+.show-loss-message {
+  display: flex;
+}
